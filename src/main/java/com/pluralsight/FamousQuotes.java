@@ -20,11 +20,16 @@ public class FamousQuotes {
                 "Roads? Where we're going, we don't need roads. — Back to the Future"
         };
 
-        System.out.print("Select a quote number from 1 to 10: ");
-        int input = myScanner.nextInt();
+        try {
+            System.out.println("Select a quote number from 1 to 10: ");
+            int input = myScanner.nextInt();
 
-        // Array indexes start at 0, so subtract 1.
-        System.out.println(quotes[input - 1]);
+            // Array indexes start at 0, so subtract 1.
+            System.out.println(quotes[input - 1]);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Please select a number between 1 and 10.");
+        }
 
         myScanner.close();
     }
